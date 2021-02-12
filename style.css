@@ -6,11 +6,11 @@ body {
   margin: 0;
   padding: 0;
   color: var(--purple);
-  font-family: Courier New, sans-serif!important;
+  font-family: "Courier New", !important;
   background-color: purple;
 
 }
 
-h1.playText {
-  font: Courier New, sans-serif!important;
+#playText {
+  font-family: "Courier New",!important;
 }
