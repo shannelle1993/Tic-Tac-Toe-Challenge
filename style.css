@@ -13,7 +13,7 @@ body {
   color: #8fbc8f;
   font-family: "Papyrus" !important;
   font-size: 32px;
-  background-color: white;
+  background-color: lightgrey;
   text-align: center;
 }
 
@@ -66,15 +66,15 @@ body {
 }
 
 .cell.x::before,
-.cell.x::after {
+.cell.x::after,
+.cell.circle::before {
   background-color: #EEE8AA;
 }
 
-
 .board.x .cell:not(.x):not(.circle):hover::before,
-.board.x .cell:not(.x):not(.circle):hover::after
+.board.x .cell:not(.x):not(.circle):hover::after,
 .board.circle .cell:not(.x):not(.circle):hover::before {
-  background-color: #FFFFE0;
+  background-color: rgba(238, 232, 170, 0.54);
 }
 
 .cell.x::before,
@@ -112,7 +112,6 @@ body {
 .board.circle .cell:not(.x):not(.circle):hover::before {
   width: var(--mark-size);
   height: var(--mark-size);
-  background-color: #EEE8AA;
 }
 
 .cell.circle::after,
@@ -122,31 +121,56 @@ body {
   background-color: #8fbc8f;
 }
 
-#playText {
-  font-family: "Papyrus" !important;
-  font-size: 64px;
-  text-align: center;
+.winning-message {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(143, 188, 143, 0.85);
+  justify-content: center;
+  align-items: center;
+  color: #f4ecdd;
+  font-size: 50px;
+  flex-direction: column;
 }
 
-#restartButton{
+#restartButton {
   font-family: "Papyrus";
-  font-size: 20px;
-  color: #8fbc8f;
+  font-size: 30px;
   background-color: #f4ecdd;
   border-radius: 8px;
   border-color: white;
-  margin:auto;
-  display:block;
+  display: block;
+  cursor: pointer;
   transition: 200ms transform;
 }
 
 #restartButton:hover {
   font-family: "Papyrus" !important;
-  font-size: 20px;
+  font-size: 30px;
   background-color: #8fbc8f;
-  color: white;
+  color: #f4ecdd;
   cursor: pointer;
   transform: translateY(-2px);
+}
+
+.winning-message.show {
+  display: flex;
+}
+
+#playText {
+  font-family: "Papyrus" !important;
+  font-size: 64px;
+  text-align: center;
+  align-content: center;
+
+}
+
+
+
+
 
 * {
   box-sizing: border-box;
